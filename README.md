@@ -115,5 +115,36 @@ describe historico;
 ```
 ## Código DML
 ```sql
+USE chamados;
 
+INSERT INTO usuario (nome, email, telefone, departamento, cargo) VALUES
+('Aura Dias', 'aura.dias@email.com', '19-99999-0001', 'Paper Company', 'Cópias'),
+('Flávio', 'flavio@email.com', '19-99999-0002', 'Paper Company', 'Cópias'),
+('Jacinto Pena', 'jacinto.pena@email.com', '19-99999-0003', 'Paper Company', 'Cópias');
+
+INSERT INTO tecnico (nome, email, especialidade, status) VALUES
+('Eduardo', 'eduardo@email.com', 'TI', 'ativo'),
+('Heitor', 'heitor@email.com', 'Excel', 'ativo'),
+('Otávio', 'otavio@email.com', 'Microsoft', 'inativo');
+
+INSERT INTO categoria (nome, descricao) VALUES
+('TI', 'Problemas de tecnologia'),
+('Excel', 'Problemas com excel'),
+('Microsoft', 'Problemas com microsoft');
+
+INSERT INTO chamado (id_usuario, id_tecnico, id_categoria, titulo, descricao, prioridade, status, data_abertura, data_fechamento) VALUES
+(1, 2, 2, 'Cópia Excel', 'Mensagem de erro de cópia no excel', 'urgente', 'concluido', '2009-09-19 10:00:00', '2009-09-19 11:00:00'),
+(2, 3, 3, '67 Contas Microsoft', 'Como criar 67 contas na microsoft', 'normal', 'concluido', '2007-07-07 09:00:00', '2007-07-07 10:00:00'),
+(3, 1, 1, 'Erro Email', 'Erro ao enviar mensagem no email', 'não relevante', 'não concluido', '2005-05-05 14:00:00', NULL);
+
+INSERT INTO historico (id_usuario, id_chamado, descricao, tipo, data_hora) VALUES
+(1, 1, 'Mensagem de erro de cópia no excel', 'texto', '2009-09-19 10:00:00'),
+(2, 2, 'Como criar 67 contas na microsoft', 'texto', '2007-07-07 09:00:00'),
+(3, 3, 'Erro ao enviar mensagem no email', 'texto', '2005-05-05 14:00:00');
+
+SELECT * FROM usuario;
+SELECT * FROM tecnico;
+SELECT * FROM categoria;
+SELECT * FROM chamado;
+SELECT * FROM historico;
 ```
