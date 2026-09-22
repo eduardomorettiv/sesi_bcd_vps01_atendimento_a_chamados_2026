@@ -1,0 +1,4 @@
+id,nome,email,especialidade,status
+1,Eduardo,eduardo@gmail.com,banco de dados,ativo
+2,Heitor,heitor@gmail.com,back end,ativo
+3,Otávio,otavio@gmail.com,html,inativo
